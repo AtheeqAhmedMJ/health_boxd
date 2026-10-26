@@ -1,5 +1,5 @@
 /* ---------- backdrop: aurora + drifting glass capsules ---------- */
-.backdrop { position: fixed; inset: 0; z-index: 0; overflow: hidden; pointer-events: none; }
+.backdrop { position: fixed; inset: 0; z-index: -1; overflow: hidden; pointer-events: none; } /* FIXED */
 .blob { position: absolute; width: 46vmax; height: 46vmax; border-radius: 50%; filter: blur(70px); opacity: 0.5; animation: drift 26s ease-in-out infinite alternate; will-change: transform; }
 .b1 { left: -12vmax; top: -10vmax; background: radial-gradient(circle, rgba(159, 134, 214, 0.55), transparent 70%); }
 .b2 { right: -14vmax; top: 30vh; background: radial-gradient(circle, rgba(74, 33, 80, 0.28), transparent 70%); animation-delay: -9s; }
@@ -54,8 +54,8 @@
 .sweep { background: linear-gradient(110deg, var(--aubergine) 30%, var(--aubergine-2) 50%, var(--aubergine) 70%); background-size: 200% 100%; animation: sweep 9s linear infinite; }
 @keyframes sweep { to { background-position: -200% 0; } }
 
-/* ---------- hero + stage ---------- */
-.stage { width: 100%; aspect-ratio: 1; max-height: 560px; }
+/* ---------- hero + stage (3D capsule sits above the pattern) ---------- */
+.stage { position: relative; z-index: 3; width: 100%; aspect-ratio: 1; max-height: 560px; } /* FIXED */
 .stage canvas { display: block; width: 100%; height: 100%; }
 .rise { animation: rise 1s var(--ease) both; }
 .d1 { animation-delay: 0.12s; } .d2 { animation-delay: 0.24s; } .d3 { animation-delay: 0.36s; }
